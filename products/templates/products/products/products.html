@@ -1,3 +1,26 @@
 {% extends 'products/base/base.html' %}
 
-{% block page_content %}<h1>This is the <span style="color: crimson;">products</span> page of pylorama website</h1>{% endblock %}
+{% block page_content %}
+
+<table>
+   <thead>
+      <tr>
+         {% for table_header in table_headers %}
+            <th>{{table_header}}</th>
+         {% endfor %}
+      </tr>
+   </thead>
+   <tbody>
+      {% for product in products %}
+         <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.material}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+         </tr>
+      {% endfor %}
+   </tbody>
+</table>
+
+{% endblock %}

@@ -7,8 +7,15 @@
 </header>
 <main>
    <section>
-      <form action="" method="post"></form>
+      <form action="{% url 'index' %}" method="post">
+         {% csrf_token %}
+         <ul>
+            {{ form.as_ul }}
+         </ul>
+         <button type="submit">Add</button>
+      </form>
    </section>
+   <button><a href="{% url 'products' %}">View products</a></button>
 </main>
 
 {% endblock %}

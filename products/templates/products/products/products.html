@@ -1,5 +1,7 @@
 {% extends 'products/base/base.html' %}
 
+{% load static %}
+
 {% block page_content %}
 
 <table>
@@ -22,5 +24,7 @@
       {% endfor %}
    </tbody>
 </table>
+
+<script src="{% static 'scripts/table.js' %}" defer></script>
 
 {% endblock %}
